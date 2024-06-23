@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+    <style>
+        .correct-solution {
+            display: flex;
+            align-items: center;
+        }
+        .green-square {
+            width: 20px;
+            height: 20px;
+            background-color: green;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <main class="container">
+        <section>
+            <h2>Prawidlowe rozwiazania</h2>
+            <ul>
+                {% for x_value, y_value, z_value, all_correct in results %}
+                    <li class="correct-solution">
+                        Solution: x = {{ x_value }}, y = {{ y_value }}, z = {{ z_value }}
+                        <div class="green-square"></div>
+                    </li>
+                {% endfor %}
+            </ul>
+        </section>
+    </main>
+</body>
+</html>
